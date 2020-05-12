@@ -1,0 +1,18 @@
+<p>Probando switchmap</p>
+<form  [formGroup]="formGroup" (ngSubmit)="onFormSubmit()" ngNativeValidate>
+
+  <mat-slide-toggle formControlName="enableWifi" id="activais">Empresas Activadas</mat-slide-toggle>
+  <mat-slide-toggle formControlName="acceptTerms">Accept Terms of Service</mat-slide-toggle>
+
+  <p>Form Group Status: {{formGroup.status}}</p>
+
+ <select  formControlName="selectCompany" >
+   <option *ngFor="let item of companies" >
+     {{item.name}}
+   </option>
+ </select>
+{{companies | json}}
+
+
+  <button mat-rasied-button type="submit">Save Settings</button>
+</form>
